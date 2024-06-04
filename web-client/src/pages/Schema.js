@@ -96,8 +96,8 @@ const generateEmptyPitSchema = () => {
 }
 
 const SchemaPage = () => {
-    const [workingMatchSchema, setWorkingMatchSchema] = useState(JSON.parse(localStorage.getItem("working-schema")) || generateEmptyMatchSchema())
-    const [workingPitSchema, setWorkingPitSchema] = useState(JSON.parse(localStorage.getItem("working-schema")) || generateEmptyPitSchema())
+    const [workingMatchSchema, setWorkingMatchSchema] = useState(JSON.parse(localStorage.getItem("working-match-schema")) || generateEmptyMatchSchema())
+    const [workingPitSchema, setWorkingPitSchema] = useState(JSON.parse(localStorage.getItem("working-pit-schema")) || generateEmptyPitSchema())
 
     useEffect(() => localStorage.setItem("working-match-schema", JSON.stringify(workingMatchSchema)), [workingMatchSchema])
     useEffect(() => localStorage.setItem("working-pit-schema", JSON.stringify(workingPitSchema)), [workingPitSchema])
@@ -129,15 +129,11 @@ const SchemaPage = () => {
     const exportMatchJSON = () => {
         const formatted = [...workingMatchSchema]
 
-        console.log({ formatted })
-
         formatted.forEach(entry => {
             if (entry.ui.type == "text") entry.dataType = "string"
             else if(entry.ui.type == "slider") entry.dataType = "4bit"
-            else if(entry.ui.type == "toggle") entry.dataType = "1bit"
+            else if(entry.ui.type == "toggle") entry.dataType = "boolean"
             else if(entry.ui.type == "radio" || entry.ui.type == "dropdown") {
-                console.log(entry)
-
                 entry.ui.options = entry.ui.options.map(option => option.trim())
 
                 let expectedDataType = "1bit"
@@ -151,8 +147,6 @@ const SchemaPage = () => {
                 entry.dataType = expectedDataType
             }
         })
-
-        console.log({ formatted })
         
         const validationResult = validateSchema(formatted, "Match")
 
@@ -174,7 +168,7 @@ const SchemaPage = () => {
         formatted.forEach(entry => {
             if (entry.ui.type == "text") entry.dataType = "string"
             else if(entry.ui.type == "slider") entry.dataType = "4bit"
-            else if(entry.ui.type == "toggle") entry.dataType = "1bit"
+            else if(entry.ui.type == "toggle") entry.dataType = "boolean"
             else if(entry.ui.type == "radio" || entry.ui.type == "dropdown") {
                 entry.ui.options = entry.ui.options.map(option => option.trim())
 
@@ -203,8 +197,6 @@ const SchemaPage = () => {
             alert(validationResult.reason)
         }
     }
-
-    // TODO: make sure required fields are there
 
     const importMatchJSON = () => {
         const importedSchemaString = prompt("Paste an the JSON (not url) for an existing match schema created with the Lancer Scout schema builder.")
@@ -244,7 +236,7 @@ const SchemaPage = () => {
 
     return (
         <React.Fragment>
-            <h1>Builder Schema</h1>
+            <h1>Schema Builder</h1>
             <div style={{ display: "flex", flexDirection: "row" }} className={"standard-content-container"}>
                 <div className={"info-container"}>
                     <h2>Working Match Schema</h2>
