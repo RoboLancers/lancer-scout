@@ -56,7 +56,7 @@ TODO:
 
 ## Notes For Programmers
 
-TODO
+TODO:
 
  - language and framework choices
 

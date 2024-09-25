@@ -95,6 +95,30 @@ input {
     background-color: $grey;
 }
 
+.home-page {
+    margin: auto;
+    width: min(100vw - 40px, 800px);
+
+    h1 {
+        font-size: 24px;
+        text-align: left;
+        padding: 20px 20px;
+    }
+    
+    h2 {
+        font-size: 18px;
+        text-align: left;
+        padding: 10px 20px;
+    }
+    
+    p {
+        font-size: 18px;
+        text-align: left;
+        padding: 0 20px;
+        width: unset;
+    }
+}
+
 .standard-content-container {
     width: 100%;
     min-height: calc(100vh - 66.5px - 72.5px - 2px);

@@ -2,12 +2,86 @@ import React from "react"
 
 const HomePage = () => {
     return (
-        <React.Fragment>
-            <h1>Welcome to the Lancer Scout Dashboard</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Porttitor eget dolor morbi non arcu. Amet massa vitae tortor condimentum lacinia quis vel. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non. Vulputate sapien nec sagittis aliquam malesuada bibendum. Sed sed risus pretium quam vulputate dignissim suspendisse. Id ornare arcu odio ut. Sed elementum tempus egestas sed. Mus mauris vitae ultricies leo integer malesuada. Tellus orci ac auctor augue mauris augue. Velit egestas dui id ornare arcu odio ut. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Ac tortor vitae purus faucibus ornare. Ullamcorper velit sed ullamcorper morbi tincidunt. Arcu dui vivamus arcu felis bibendum ut. Tellus pellentesque eu tincidunt tortor aliquam nulla. Vitae tortor condimentum lacinia quis vel eros donec ac.</p>
-            <p>At auctor urna nunc id cursus. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Elementum curabitur vitae nunc sed velit dignissim sodales ut. Eget nullam non nisi est sit amet facilisis magna etiam. Eu consequat ac felis donec et odio pellentesque. Orci eu lobortis elementum nibh. Vitae suscipit tellus mauris a diam maecenas. Adipiscing vitae proin sagittis nisl rhoncus mattis. Nec tincidunt praesent semper feugiat nibh. Vitae nunc sed velit dignissim sodales ut eu sem. Orci a scelerisque purus semper eget. In ornare quam viverra orci sagittis. Pharetra vel turpis nunc eget lorem dolor sed. Sed cras ornare arcu dui. At erat pellentesque adipiscing commodo elit. A iaculis at erat pellentesque adipiscing commodo elit. Pharetra magna ac placerat vestibulum. Turpis in eu mi bibendum neque. Nunc sed augue lacus viverra vitae congue eu.</p>
-        </React.Fragment>
+        <div className="home-page">
+            <h1 id="welcome-to-lancer-scout">Welcome to Lancer Scout</h1>
+
+            <p>Lancer Scout is a custom scouting suite developed by Team 321 The RoboLancers.</p>
+            <p>Lancer Scout was built with several criteria in mind:</p>
+
+            <ul>
+                <li><p>Fully offline experience for competitions</p>
+                </li>
+                <li><p>Quick data transfer for real time usage</p>
+                </li>
+                <li><p>Highly customizable scouting forms</p>
+                </li>
+                <li><p>Minimalist data analytics and visualization</p>
+                </li>
+                <li><p>Easy transitions between tournaments</p>
+                </li>
+            </ul>
+
+            <h2 id="table-of-contents">Table of Contents</h2>
+
+            <ul>
+                <li><p><a href="#how-it-works-(overview">How It Works (Overview)</a>)</p>
+                </li>
+                <li><p><a href="#documentation">Documentation</a></p>
+                </li>
+                <li><p><a href="#notes-for-programmers">Notes For Programmers</a></p>
+                </li>
+            </ul>
+
+            <h2 id="how-it-works-overview-">How It Works (Overview)</h2>
+            
+            <p>The scouting process starts from the <strong>Lancer Scout Dashboard</strong>. The dashboard has several pages that control the flow of the scouting operation:</p>
+            
+            <ul>
+                <li><p><strong>The Tournament Page</strong> is for creating and managing different tournaments. Using different tournaments allows for easy data separation across events.</p>
+                </li>
+                <li><p><strong>The Schema Page</strong> is for designing the forms that scouts will use. Each <em>schema</em> (scouting form) can be built with the editor on this page to avoid the need to do this programmatically. It includes basic presets for a match scouting form and a pit scouting form which can then be modified.</p>
+                </li>
+                <li><p><strong>The Upload Page</strong> is for transferring scout data from individual scouters to the main scouting dashboard. Scouts will upload each scouting report via QR Code which the upload page will read and integrate with its database for the current tournament.</p>
+                </li>
+                <li><p><strong>The Data Page</strong> is for analyzing the current tournament. There are several tabs within the data page to view pit scouts, team overviews, individual performances of a team, compare teams, and rank teams.</p>
+                </li>
+            </ul>
+
+            <p>The dashboard is used for managing the scouting operation, so most scouts will only be using the <strong><a href="https://lancer-scout-321.vercel.app/">Lancer Scout Client</a></strong> to collect and later trasfer data.</p>
+            <p>Lancer Scout Client is a mobile-friendly offline website. Using PWA features, the website will save itself to your device after you enter for the first time on WiFi.</p>
+            <p>Scouts will upload the schemas created on the dashboard via URL which will allow them to scout using the specific form you created. It is important to make sure scouts are using the right schema across different tournaments or you will run into compatability issues when trying to transfer data.</p>
+            <p>After they have collected a sufficient amount of data at an event, have the scouts return back to the management team and transfer their data so it can be analyzed on the dashboard.</p>
+            
+            <h2 id="documentation">Documentation</h2>
+            
+            <p>TODO:</p>
+            
+            <ul>
+                <li><p>installation/script/docker</p>
+                </li>
+                <li><p>explain each page on dashboard</p>
+                </li>
+                <li><p>explain each page on client</p>
+                </li>
+                <li><p>best practices</p>
+                </li>
+            </ul>
+
+            <h2 id="notes-for-programmers">Notes For Programmers</h2>
+            
+            <p>TODO:</p>
+
+            <ul>
+                <li><p>language and framework choices</p>
+                </li>
+                <li><p>repo organization and code structure</p>
+                </li>
+                <li><p>known issues</p>
+                </li>
+                <li><p>contributions and future considerations</p>
+                </li>
+            </ul>
+        </div>
     )
 }
 
