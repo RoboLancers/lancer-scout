@@ -34,7 +34,7 @@ The scouting process starts from the **Lancer Scout Dashboard**. The dashboard h
 
  - **The Data Page** is for analyzing the current tournament. There are several tabs within the data page to view pit scouts, team overviews, individual performances of a team, compare teams, and rank teams.
 
-The dashboard is used for managing the scouting operation, so most scouts will only be using the **[Lancer Scout Client](https://lancer-scout-321.vercel.app/)** to collect and later trasfer data.
+The dashboard is used for managing the scouting operation, so most scouts will only be using the **[Lancer Scout Client](https://lancer-scout-321.vercel.app/)** to collect and later transfer data.
 
 Lancer Scout Client is a mobile-friendly offline website. Using PWA features, the website will save itself to your device after you enter for the first time on WiFi.
 
@@ -44,9 +44,22 @@ After they have collected a sufficient amount of data at an event, have the scou
 
 ## Documentation
 
-TODO:
+### Installation
 
- - installation/script/docker
+- Install Docker Desktop (https://www.docker.com/products/docker-desktop/)
+
+In a terminal, run
+
+`docker compose up`
+
+To open up the app, go to http://localhost:8080/
+
+### Prisma Studio
+
+To open up prisma studio, go inside the server container in Docker Desktop
+and select the `exec` tab. Type `npx prisma studio` and navigate to http://localhost:5555/
+
+TODO:
 
  - explain each page on dashboard
 
